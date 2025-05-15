@@ -1,0 +1,46 @@
+{
+  "name": "tushare-sina-news",
+  "version": "1.0.0",
+  "description": "Tushare新浪财经新闻API插件，用于获取财经相关新闻内容",
+  "logo": "https://example.com/logo.png",
+  "publisher": "Your Name",
+  "contact_email": "your.email@example.com",
+  "legal_info_url": "https://example.com/legal",
+  "tools": [
+    {
+      "name": "get_sina_news",
+      "description": "获取新浪财经新闻",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "start_date": {
+            "type": "string",
+            "description": "新闻开始日期 (YYYYMMDD格式)"
+          },
+          "end_date": {
+            "type": "string",
+            "description": "新闻结束日期 (YYYYMMDD格式)"
+          },
+          "category": {
+            "type": "string",
+            "description": "新闻类别，可选值: 财经, 科技, 社会, 国际等",
+            "default": "财经"
+          },
+          "limit": {
+            "type": "integer",
+            "description": "返回条数限制",
+            "default": 10
+          }
+        },
+        "required": ["start_date"]
+      }
+    }
+  ],
+  "env": {
+    "TUSHARE_TOKEN": {
+      "type": "string",
+      "required": true,
+      "description": "Tushare API令牌，用于接口认证"
+    }
+  }
+}
